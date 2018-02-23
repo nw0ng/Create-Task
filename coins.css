@@ -1,0 +1,46 @@
+body{
+    background: #1c1e1f;
+    color: white;
+    font-family: Impact;
+}
+
+
+#bitcoinpng{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+#ethereumpng{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+#litecoinpng{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+#nanopng{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+#switchpng{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0px;
+    left: 175px;
+}

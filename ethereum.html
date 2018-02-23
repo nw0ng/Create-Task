@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="coins.css">
+  </head>
+  <body>
+    <div class= "row">
+        <div id="price-container">
+          <p class="subtext">Current ETH/USD<img src="images/ethereum.png" id="ethereumpng"></p>
+          <h1 id="ethprice">...</h1>
+        </div>
+          <form id = "converter">
+            <input type="text" name="toConvert" placeholder="ETH Amount">
+          </form>
+          <button onclick = "ethusd()">ETH => $</button><button onclick = "usdeth()">$ => ETH</button>
+          <u><h2 id = "result">___</h2></u>
+        </div>
+        <script>
+        const axios = require('axios')
+        const electron = require('electron')
+        const BrowserWindow = electron.remote.BrowserWindow
+        const path = require('path')
+
+
+        function getETH(){
+            var price = document.querySelector('h1')
+            axios.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+                .then(res => {
+                    const ETH = res.data.USD
+                    price.innerHTML = '$'+ETH.toLocaleString('en')
+            })
+        }
+
+        getETH();
+        setInterval(getETH, 30000);
+
+
+        function ethusd(){
+            var x = "";
+            var result = document.getElementById("converter");
+            for(var i = 0; i < result.length; i++){
+            x += result.elements[i].value
+        }
+        axios.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+                .then(res => {
+                    const price = res.data.USD
+                    document.getElementById("result").innerHTML = x+' ETH = $'+(x * price).toLocaleString('en')
+
+                    if(isNaN(x)){
+                      document.getElementById("result").innerHTML = 'Please enter a valid amount'
+                    }
+                })
+            
+        }
+
+        function usdeth(){
+            var x = "";
+            var result = document.getElementById("converter");
+            for(var i = 0; i < result.length; i++){
+            x += result.elements[i].value
+        }
+        axios.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+        .then(res => {
+            const price = res.data.USD
+            document.getElementById("result").innerHTML = '$'+x+' = ' +(x / price).toLocaleString('en')+' ETH'
+
+            if(isNaN(x)){
+              document.getElementById("result").innerHTML = 'Please enter a valid amount'
+            }
+        })
+            
+        }
+        function back(){
+          window.history.back()
+        }
+       </script>
+  <button onclick="back()">Back</button>
+  </body>
+</html>
