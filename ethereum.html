@@ -11,7 +11,7 @@
           <h1 id="ethprice">...</h1>
         </div>
           <form id = "converter">
-            <input type="text" name="toConvert" placeholder="ETH Amount">
+            <input type="text" name="toConvert" placeholder="Amount">
           </form>
           <button onclick = "ethusd()">ETH => $</button><button onclick = "usdeth()">$ => ETH</button>
           <u><h2 id = "result">___</h2></u>
@@ -22,7 +22,7 @@
         const BrowserWindow = electron.remote.BrowserWindow
         const path = require('path')
 
-        //From DesignCourse
+        //From https://www.youtube.com/watch?v=2RxHQoiDctI&t=1s
         function getETH(){
             var price = document.querySelector('h1')
             axios.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
