@@ -11,7 +11,7 @@
             <h1 id="btcprice">...</h1> 
           </div>
             <form id = "converter">
-              <input type="text" name="toConvert" placeholder="BTC Amount">
+              <input type="text" name="toConvert" placeholder="Amount">
             </form>
             <button onclick = "btcusd()">BTC => $</button><button onclick = "usdbtc()">$ => BTC</button>
             <u><h2 id = "result">___</h2></u>
@@ -24,7 +24,7 @@
           
          
   
-          //From DesignCourse
+          //From https://www.youtube.com/watch?v=2RxHQoiDctI&t=1s
           function getBTC(){
               var price = document.querySelector('h1')
               axios.get('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD')
