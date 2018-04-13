@@ -2,9 +2,12 @@
 
 nodejs required
 
+Use visual studio code
+
+in the terminal put these in:
 npm install electron -g
 
 npm install axios --save
 
-
-Don't know if it's necessary, but I used Visual Studio Code and used the terminal to start the program with: npm start
+to run code, use: npm start
+in the terminal
