@@ -11,7 +11,7 @@
           <h1 id="nanoprice">...</h1>
         </div>
           <form id = "converter">
-            <input type="text" name="toConvert" placeholder="NANO Amount">
+            <input type="text" name="toConvert" placeholder="Amount">
           </form>
           <button onclick = "nanousd()">NANO => $</button><button onclick = "usdnano()">$ => NANO</button>
           <u><h2 id = "result">___</h2></u>
@@ -22,7 +22,7 @@
         const BrowserWindow = electron.remote.BrowserWindow
         const path = require('path')
 
-      //From DesignCourse
+        //From https://www.youtube.com/watch?v=2RxHQoiDctI&t=1s
         function getNANO(){
             var price = document.querySelector('h1')
             axios.get('https://min-api.cryptocompare.com/data/price?fsym=XRB&tsyms=USD')
