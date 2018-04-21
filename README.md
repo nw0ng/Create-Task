@@ -1,5 +1,6 @@
 # Create-Task
 
+git required
 nodejs required
 
 Use visual studio code
